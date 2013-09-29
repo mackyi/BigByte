@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC052EC417F7E8F900096872 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC052EC317F7E8F900096872 /* SearchResultsViewController.m */; };
 		EC903FE717F7A4F0006F3ED2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FE617F7A4F0006F3ED2 /* Foundation.framework */; };
 		EC903FE917F7A4F0006F3ED2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FE817F7A4F0006F3ED2 /* CoreGraphics.framework */; };
 		EC903FEB17F7A4F0006F3ED2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FEA17F7A4F0006F3ED2 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC052EC217F7E8F900096872 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsViewController.h; path = ../SearchResultsViewController.h; sourceTree = "<group>"; };
+		EC052EC317F7E8F900096872 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsViewController.m; path = ../SearchResultsViewController.m; sourceTree = "<group>"; };
 		EC903FE317F7A4F0006F3ED2 /* BigByteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigByteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC903FE617F7A4F0006F3ED2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC903FE817F7A4F0006F3ED2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 		EC903FEC17F7A4F0006F3ED2 /* BigByteTest */ = {
 			isa = PBXGroup;
 			children = (
+				EC052EC217F7E8F900096872 /* SearchResultsViewController.h */,
+				EC052EC317F7E8F900096872 /* SearchResultsViewController.m */,
 				EC903FF517F7A4F0006F3ED2 /* BigByteTestAppDelegate.h */,
 				EC903FF617F7A4F0006F3ED2 /* BigByteTestAppDelegate.m */,
 				EC903FF817F7A4F0006F3ED2 /* Main.storyboard */,
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC052EC417F7E8F900096872 /* SearchResultsViewController.m in Sources */,
 				ECFC0CF417F7A6F3000E7933 /* Song.m in Sources */,
 				EC90400017F7A4F0006F3ED2 /* BigByteTestDetailViewController.m in Sources */,
 				ECFC0CFA17F7B17A000E7933 /* App.m in Sources */,

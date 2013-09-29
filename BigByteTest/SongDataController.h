@@ -17,4 +17,6 @@
 - (Song *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addSong:(Song *)song;
 
+- (void)search: (NSString *)searchTerm;
+
 @end

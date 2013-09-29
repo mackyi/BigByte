@@ -10,7 +10,7 @@
 #import "SongDataController.h"
 @class BigByteTestDetailViewController;
 
-@interface BigByteTestMasterViewController : UITableViewController
+@interface BigByteTestMasterViewController : UITableViewController <UISearchBarDelegate>
 
 @property (strong, nonatomic) BigByteTestDetailViewController *detailViewController;
 @property (strong, nonatomic) SongDataController *dataController;

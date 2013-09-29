@@ -49,5 +49,10 @@
     [self.masterSongList addObject:song];
 }
 
+- (void) search:(NSString *)searchTerm{
+    NSLog(@"%@", @"Searching");
+    
+}
+
 
 @end

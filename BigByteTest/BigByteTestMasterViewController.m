@@ -123,4 +123,12 @@
     }
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    NSString *searchTerm = [searchBar text];
+    NSLog(@"%@", searchTerm);
+    [self.dataController search:searchTerm];
+}
+
 @end

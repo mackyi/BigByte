@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class Song;
 
-@interface BigByteTestDetailViewController : UITableViewController <UISplitViewControllerDelegate>
+@interface BigByteTestDetailViewController : UICollectionViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) Song *song;
 @property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
