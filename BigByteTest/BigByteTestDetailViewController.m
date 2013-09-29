@@ -14,6 +14,8 @@
 
 #import "SongDisplayViewController.h"
 
+#import "SongDataController.h"
+
 @interface BigByteTestDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @end
@@ -22,13 +24,19 @@
 
 #pragma mark - Managing the detail item
 
+- (void)awakeFromNib
+{
+    NSLog(@"detail view awake from nib");
+    self.clearsSelectionOnViewWillAppear = YES;
+    [super awakeFromNib];
+    self.dataController = [[SongDataController alloc] init];
+    self.dataController.collectionViewController = self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    [self setModalViewController:[[SongDisplayViewController alloc]init]];
-//   self.modalViewController = (SongDisplayViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-//    self.modalViewController = [[SongDisplayViewController alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,35 +63,37 @@
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    return 32;
+    return [self.dataController countOfList];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    // we're going to use a custom UICollectionViewCell, which will hold an image and its label
-    //
-    SearchResultCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"SearchResultCell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"SearchResultCell";
+    SearchResultCell *cell = [cv dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.artist_name.text = @"Miley Cyrus";
-    cell.song_name.text = @"Wrecking Ball";
-//    // make the cell's title the actual NSIndexPath value
-//    cell.label.text = [NSString stringWithFormat:@"{%ld,%ld}", (long)indexPath.row, (long)indexPath.section];
-//    
-//    // load the image for this cell
-//    NSString *imageToLoad = [NSString stringWithFormat:@"%d.JPG", indexPath.row];
-//    cell.image.image = [UIImage imageNamed:imageToLoad];
+    Song *songAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
     
+    cell.song = songAtIndex;
+    cell.artist_name.text = songAtIndex.artist_name;
+    cell.song_name.text = songAtIndex.song_name;
+    
+    NSString *url = songAtIndex.album_artwork_url;
+    NSError *error = nil;
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]
+                                              options:0
+                                                error:&error];
+    UIImage *image = [UIImage imageWithData:imageData];
+    cell.image.image = image;
     return cell;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"Preparing Segue");
+  //  [self.collectionView reloadData];
     if ([[segue identifier] isEqualToString:@"ShowSongModal"]) {
         SongDisplayViewController *modalViewController = [segue destinationViewController];
         
-        modalViewController.song = [[Song alloc] init];
-        modalViewController.song.song_name = @"Royals";
-        modalViewController.song.artist_name =@"Lorde";
+        modalViewController.song = ((SearchResultCell *) sender).song;
         //[self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
     }
 }

@@ -10,12 +10,12 @@
 
 @implementation Song
 
--(id) initWithSongName:(NSString *)song_name album_name:(NSString *) album_name
+-(id) initWithSongName:(NSString *)song_name artist_name:(NSString *) artist_name
 {
     self = [super init];
     if (self) {
         _song_name = song_name;
-        _album_name = album_name;
+        _artist_name = artist_name;
         return self;
     }
     return nil;

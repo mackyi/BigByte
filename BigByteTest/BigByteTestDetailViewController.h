@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class Song;
-@class SongDisplayViewController;
-@interface BigByteTestDetailViewController : UICollectionViewController <UISplitViewControllerDelegate>
-@property (strong, nonatomic) SongDisplayViewController *modalViewController;
+@class SongDataController;
+
+@interface BigByteTestDetailViewController : UICollectionViewController <UISplitViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (strong, nonatomic) SongDataController *dataController;
 
 @end
