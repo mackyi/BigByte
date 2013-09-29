@@ -19,26 +19,29 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+
+- (void)setSong:(Song *) newSong
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_song!= newSong) {
+        _song = newSong;
         
         // Update the view.
         [self configureView];
     }
-
+    
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    Song *theSong = self.song;
+    
+    if (theSong) {
+        self.songNameLabel.text = theSong.song_name;
+        self.albumNameLabel.text = theSong.album_name;
     }
 }
 

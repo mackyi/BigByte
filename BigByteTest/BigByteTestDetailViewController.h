@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Song;
 
-@interface BigByteTestDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface BigByteTestDetailViewController : UITableViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) Song *song;
+@property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *albumNameLabel;
 @end

@@ -11,12 +11,12 @@
 #import "BigByteTestDetailViewController.h"
 #import "SongDataController.h"
 #import "Song.h"
-
+/*
 @interface BigByteTestMasterViewController () {
     NSMutableArray *_objects;
 }
 @end
-
+*/
 @implementation BigByteTestMasterViewController
 
 - (void)awakeFromNib
@@ -43,7 +43,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void)insertNewObject:(id)sender
 {
     if (!_objects) {
@@ -53,7 +53,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
+*/
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -68,7 +68,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"MasterCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     Song *songAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
@@ -112,15 +112,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Song *song = [self.dataController objectInListAtIndex:indexPath.row];
-    self.detailViewController.detailItem = song;
+    self.detailViewController.song = song;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
+        BigByteTestDetailViewController *detailViewController = [segue destinationViewController];
+        
+        detailViewController.song = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
     }
 }
 
