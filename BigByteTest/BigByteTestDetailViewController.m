@@ -10,47 +10,25 @@
 
 #import "Song.h"
 
+#import "SearchResultCell.h"
+
+#import "SongDisplayViewController.h"
+
 @interface BigByteTestDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
 @end
 
 @implementation BigByteTestDetailViewController
 
 #pragma mark - Managing the detail item
 
-
-- (void)setSong:(Song *) newSong
-{
-    if (_song!= newSong) {
-        _song = newSong;
-        
-        // Update the view.
-        [self configureView];
-    }
-    
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }
-}
-
-- (void)configureView
-{
-    NSLog(@"%@", @"Configuring View");
-    // Update the user interface for the detail item.
-    Song *theSong = self.song;
-    
-    if (theSong) {
-        self.songNameLabel.text = theSong.song_name;
-        self.albumNameLabel.text = theSong.album_name;
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+//    [self setModalViewController:[[SongDisplayViewController alloc]init]];
+//   self.modalViewController = (SongDisplayViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+//    self.modalViewController = [[SongDisplayViewController alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,8 +62,10 @@
 {
     // we're going to use a custom UICollectionViewCell, which will hold an image and its label
     //
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"SearchResultCell" forIndexPath:indexPath];
+    SearchResultCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"SearchResultCell" forIndexPath:indexPath];
     
+    cell.artist_name.text = @"Miley Cyrus";
+    cell.song_name.text = @"Wrecking Ball";
 //    // make the cell's title the actual NSIndexPath value
 //    cell.label.text = [NSString stringWithFormat:@"{%ld,%ld}", (long)indexPath.row, (long)indexPath.section];
 //    
@@ -96,5 +76,16 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"Preparing Segue");
+    if ([[segue identifier] isEqualToString:@"ShowSongModal"]) {
+        SongDisplayViewController *modalViewController = [segue destinationViewController];
+        
+        modalViewController.song = [[Song alloc] init];
+        modalViewController.song.song_name = @"Royals";
+        modalViewController.song.artist_name =@"Lorde";
+        //[self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+}
 
 @end

@@ -109,19 +109,19 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Song *song = [self.dataController objectInListAtIndex:indexPath.row];
-    self.detailViewController.song = song;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
-        BigByteTestDetailViewController *detailViewController = [segue destinationViewController];
-        
-        detailViewController.song = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
-    }
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    Song *song = [self.dataController objectInListAtIndex:indexPath.row];
+//    self.detailViewController.song = song;
+//}
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
+//        BigByteTestDetailViewController *detailViewController = [segue destinationViewController];
+//        
+//        detailViewController.song = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+//    }
+//}
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {

@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class Song;
-
+@class SongDisplayViewController;
 @interface BigByteTestDetailViewController : UICollectionViewController <UISplitViewControllerDelegate>
+@property (strong, nonatomic) SongDisplayViewController *modalViewController;
 
-@property (strong, nonatomic) Song *song;
-@property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *albumNameLabel;
 @end
