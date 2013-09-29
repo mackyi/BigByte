@@ -18,13 +18,13 @@
 - (void)initializeDefaultDataList {
     NSMutableArray *songList = [[NSMutableArray alloc] init];
     self.masterSongList = songList;
-    Song *song;
-    for(int i=0; i<20; i++){
-        song = [[Song alloc] initWithSongName:@"Wake Me Up" artist_name:@"Avicii"];
-        song.album_artwork_url = @"http://upload.wikimedia.org/wikipedia/en/d/da/Avicii_Wake_Me_Up_Official_Single_Cover.png";
-        [self addSong: song];
-      //  [self loadImageForSong:song];
-    }
+//    Song *song;
+//    for(int i=0; i<20; i++){
+//        song = [[Song alloc] initWithSongName:@"Wake Me Up" artist_name:@"Avicii"];
+//        song.album_artwork_url = @"http://upload.wikimedia.org/wikipedia/en/d/da/Avicii_Wake_Me_Up_Official_Single_Cover.png";
+//        [self addSong: song];
+//      //  [self loadImageForSong:song];
+//    }
 }
 
 - (id)init {

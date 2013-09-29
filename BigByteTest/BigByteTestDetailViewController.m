@@ -84,8 +84,8 @@
     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]
                                               options:0
                                                 error:&error];
-    UIImage *image = [UIImage imageWithData:imageData];
-    cell.image.image = image;
+    songAtIndex.image= [UIImage imageWithData:imageData];
+    cell.image.image = songAtIndex.image;
     return cell;
 }
 

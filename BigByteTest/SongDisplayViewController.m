@@ -31,8 +31,14 @@
     NSLog(@"%@", theSong);
     if (theSong) {
         NSLog(@"Yes song");
-        self.songNameLabel.text = theSong.song_name;
-        self.artistNameLabel.text = theSong.artist_name;
+        _songNameLabel.text = theSong.song_name;
+        _artistNameLabel.text = theSong.artist_name;
+        _albumNameLabel.text = theSong.album_name;
+        _albumPriceLabel.text = [theSong.album_price stringValue];
+        _songPriceLabel.text = [theSong.song_price stringValue];
+        _genreNameLabel.text = theSong.genre_name;
+        _image.image = theSong.image;
+        
     }
 }
 

@@ -30,6 +30,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.genres = @[@"Alternative",
+                    @"Blues",
+                    @"Children's music",
+                    @"Christian & Gospel",
+                    @"Classical",
+                    @"Comedy",
+                    @"Dance",
+                    @"Electronic",
+                    @"Hip-hop / Rap",
+                    @"Jazz",
+                    @"Latino",
+                    @"Metal",
+                    @"Pop",
+                    @"R&B / Soul",
+                    @"Reggae",
+                    @"Rock",
+                    @"Soundtrack",
+                    @"World"];
+    self.genreCodes = @[@"Alternative",
+                        @"Blues",
+                        @"Children",
+                        @"CG",
+                        @"Classical",
+                        @"Comedy",
+                        @"Dance",
+                        @"Electronic",
+                        @"HR",
+                        @"Jazz",
+                        @"Latino",
+                        @"Metal",
+                        @"Pop",
+                        @"RBS",
+                        @"Reggae",
+                        @"Rock",
+                        @"Soundtrack",
+                        @"World"];
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -131,4 +167,28 @@
     [self.detailViewController search:searchTerm];
 }
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.genres count];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 44.0;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    return 320.0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [self.genres objectAtIndex: row];
+}
 @end
