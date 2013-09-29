@@ -128,7 +128,7 @@
     [searchBar resignFirstResponder];
     NSString *searchTerm = [searchBar text];
     NSLog(@"%@", searchTerm);
-    [self.dataController search:searchTerm];
+    [self.detailViewController search:searchTerm];
 }
 
 @end

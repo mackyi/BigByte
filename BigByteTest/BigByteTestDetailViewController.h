@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) SongDataController *dataController;
 
+- (void)search: (NSString *)searchTerm;
+
 @end

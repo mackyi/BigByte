@@ -16,6 +16,8 @@
 
 #import "SongDataController.h"
 
+#import "SearchResult.h"
+
 @interface BigByteTestDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @end
@@ -85,6 +87,19 @@
     UIImage *image = [UIImage imageWithData:imageData];
     cell.image.image = image;
     return cell;
+}
+
+- (void) search:(NSString *)searchTerm{
+    NSLog(@"%@", @"Searching");
+    NSString *url = @"http://10.190.39.143:8888/top-songs";
+    self.dataController.searchResult = [[SearchResult alloc] initFromURLWithString:url
+                                                     completion:^(JSONModel *model, JSONModelError *err) {
+                                                         
+                                                         //json fetched
+                                                         NSLog(@"response: %@", self.dataController.searchResult.response);
+                                                         self.dataController.masterSongList = (NSMutableArray *)self.dataController.searchResult.response;
+                                                         [self.collectionView reloadData];
+                                                     }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

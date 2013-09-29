@@ -21,7 +21,6 @@
 - (Song *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addSong:(Song *)song;
 
-- (void)search: (NSString *)searchTerm;
 - (void)loadImageForSong: (Song *)song;
 
 @end
