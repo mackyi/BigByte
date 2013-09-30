@@ -10,10 +10,17 @@
 #import "SongDataController.h"
 @class BigByteTestDetailViewController;
 
-@interface BigByteTestMasterViewController : UITableViewController <UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface BigByteTestMasterViewController : UITableViewController <UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate> 
 
 @property (strong, nonatomic) BigByteTestDetailViewController *detailViewController;
 @property (strong, nonatomic) SongDataController *dataController;
+@property (strong, nonatomic) IBOutlet UIPickerView *genre;
 @property (strong, nonatomic) NSArray *genres;
 @property (strong, nonatomic) NSArray *genreCodes;
+
+@property (strong, nonatomic) NSString *searchTerm;
+@property (strong, nonatomic) NSString *genreTerm;
+@property (nonatomic) double danceability;
+@property (nonatomic) double energy;
+
 @end

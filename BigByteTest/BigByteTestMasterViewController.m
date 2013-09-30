@@ -30,7 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.genres = @[@"Alternative",
+    self.genres = @[@"All",
+                    @"Alternative",
                     @"Blues",
                     @"Children's music",
                     @"Christian & Gospel",
@@ -48,7 +49,9 @@
                     @"Rock",
                     @"Soundtrack",
                     @"World"];
-    self.genreCodes = @[@"Alternative",
+    
+    self.genreCodes = @[@"All",
+                        @"Alternative",
                         @"Blues",
                         @"Children",
                         @"CG",
@@ -66,6 +69,10 @@
                         @"Rock",
                         @"Soundtrack",
                         @"World"];
+    _genreTerm = [_genreCodes objectAtIndex:0];
+    _danceability = 0.5;
+    _energy = 0.5;
+    _searchTerm = @"";
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -163,8 +170,12 @@
 {
     [searchBar resignFirstResponder];
     NSString *searchTerm = [searchBar text];
+    NSString *genre = _genreTerm;
     NSLog(@"%@", searchTerm);
-    [self.detailViewController search:searchTerm];
+    [self.detailViewController search:searchTerm
+                                genre:_genreTerm
+                         danceability:_danceability
+                               energy:_energy];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -191,4 +202,11 @@
 {
     return [self.genres objectAtIndex: row];
 }
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.detailViewController.genreInput = [self.genreCodes objectAtIndex: row];
+}
+
+
 @end

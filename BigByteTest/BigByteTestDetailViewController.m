@@ -89,9 +89,15 @@
     return cell;
 }
 
-- (void) search:(NSString *)searchTerm{
+- (void) search:(NSString *)searchTerm
+          genre:(NSString *)genre
+   danceability:(double)danceability
+          energy:(double)energy{
     NSLog(@"%@", @"Searching");
-    NSString *url = @"http://10.190.39.143:8888/top-songs";
+    NSString *ipAddress=@"10.190.54.255:8888/";
+    int count=200;
+    NSString *url = [[NSString alloc] initWithFormat:@"http://%@songs?dance=%0.2f&energy=%0.2f&genre=%@&count=%d", ipAddress, danceability, energy, genre, count];
+    NSLog(@"%@", url);
     self.dataController.searchResult = [[SearchResult alloc] initFromURLWithString:url
                                                      completion:^(JSONModel *model, JSONModelError *err) {
                                                          
