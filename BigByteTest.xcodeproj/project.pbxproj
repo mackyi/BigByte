@@ -22,6 +22,11 @@
 		EC8BAFDD17F820E50083D612 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFD217F820E50083D612 /* JSONKeyMapper.m */; };
 		EC8BAFDE17F820E50083D612 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFD417F820E50083D612 /* JSONValueTransformer.m */; };
 		EC8BAFE117F825400083D612 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFE017F825400083D612 /* SearchResult.m */; };
+		EC8BAFE317F915810083D612 /* danceenergygrid.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE217F915810083D612 /* danceenergygrid.png */; };
+		EC8BAFE917F91E580083D612 /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE517F91E580083D612 /* pause_button.png */; };
+		EC8BAFEA17F91E580083D612 /* pause_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE617F91E580083D612 /* pause_button@2x.png */; };
+		EC8BAFEB17F91E580083D612 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE717F91E580083D612 /* play_button.png */; };
+		EC8BAFEC17F91E580083D612 /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE817F91E580083D612 /* play_button@2x.png */; };
 		EC903FE717F7A4F0006F3ED2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FE617F7A4F0006F3ED2 /* Foundation.framework */; };
 		EC903FE917F7A4F0006F3ED2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FE817F7A4F0006F3ED2 /* CoreGraphics.framework */; };
 		EC903FEB17F7A4F0006F3ED2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FEA17F7A4F0006F3ED2 /* UIKit.framework */; };
@@ -84,6 +89,11 @@
 		EC8BAFD417F820E50083D612 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		EC8BAFDF17F825400083D612 /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		EC8BAFE017F825400083D612 /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
+		EC8BAFE217F915810083D612 /* danceenergygrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = danceenergygrid.png; path = ../../../Downloads/danceenergygrid.png; sourceTree = "<group>"; };
+		EC8BAFE517F91E580083D612 /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
+		EC8BAFE617F91E580083D612 /* pause_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_button@2x.png"; sourceTree = "<group>"; };
+		EC8BAFE717F91E580083D612 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
+		EC8BAFE817F91E580083D612 /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button@2x.png"; sourceTree = "<group>"; };
 		EC903FE317F7A4F0006F3ED2 /* BigByteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigByteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC903FE617F7A4F0006F3ED2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC903FE817F7A4F0006F3ED2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -200,6 +210,18 @@
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
+		EC8BAFE417F91E580083D612 /* MusicPlayerResources */ = {
+			isa = PBXGroup;
+			children = (
+				EC8BAFE517F91E580083D612 /* pause_button.png */,
+				EC8BAFE617F91E580083D612 /* pause_button@2x.png */,
+				EC8BAFE717F91E580083D612 /* play_button.png */,
+				EC8BAFE817F91E580083D612 /* play_button@2x.png */,
+			);
+			name = MusicPlayerResources;
+			path = ../../../Downloads/MusicPlayerResources;
+			sourceTree = "<group>";
+		};
 		EC903FDA17F7A4F0006F3ED2 = {
 			isa = PBXGroup;
 			children = (
@@ -242,8 +264,10 @@
 				EC903FF517F7A4F0006F3ED2 /* BigByteTestAppDelegate.h */,
 				EC903FF617F7A4F0006F3ED2 /* BigByteTestAppDelegate.m */,
 				EC903FF817F7A4F0006F3ED2 /* Main.storyboard */,
+				EC8BAFE417F91E580083D612 /* MusicPlayerResources */,
 				EC903FFB17F7A4F0006F3ED2 /* BigByteTestMasterViewController.h */,
 				EC903FFC17F7A4F0006F3ED2 /* BigByteTestMasterViewController.m */,
+				EC8BAFE217F915810083D612 /* danceenergygrid.png */,
 				EC903FFE17F7A4F0006F3ED2 /* BigByteTestDetailViewController.h */,
 				EC903FFF17F7A4F0006F3ED2 /* BigByteTestDetailViewController.m */,
 				EC8BAFB617F7FADD0083D612 /* SongDisplayViewController.h */,
@@ -370,7 +394,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8BAFEC17F91E580083D612 /* play_button@2x.png in Resources */,
 				EC90400217F7A4F0006F3ED2 /* Images.xcassets in Resources */,
+				EC8BAFEA17F91E580083D612 /* pause_button@2x.png in Resources */,
+				EC8BAFEB17F91E580083D612 /* play_button.png in Resources */,
+				EC8BAFE317F915810083D612 /* danceenergygrid.png in Resources */,
+				EC8BAFE917F91E580083D612 /* pause_button.png in Resources */,
 				EC903FF117F7A4F0006F3ED2 /* InfoPlist.strings in Resources */,
 				EC903FFA17F7A4F0006F3ED2 /* Main.storyboard in Resources */,
 			);

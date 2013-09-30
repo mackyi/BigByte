@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 @class Song;
 
 @interface SongDisplayViewController : UITableViewController
@@ -20,5 +21,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *songPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *albumPriceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIButton *togglePlayPause;
+@property (weak, nonatomic) IBOutlet UILabel *songName;
+@property (weak, nonatomic) IBOutlet UILabel *durationOutlet;
+@property (weak, nonatomic) IBOutlet UISlider  *sliderOutlet;
 
+@property (strong, nonatomic) AVPlayer *player;
 @end

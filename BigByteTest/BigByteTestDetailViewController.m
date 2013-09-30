@@ -92,19 +92,25 @@
 - (void) search:(NSString *)searchTerm
           genre:(NSString *)genre
    danceability:(double)danceability
-          energy:(double)energy{
+          energy:(double)energy
+             ip: (NSString *) ip{
+    [self.spinner startAnimating];
     NSLog(@"%@", @"Searching");
     NSString *ipAddress=@"10.190.54.255:8888/";
-    int count=200;
-    NSString *url = [[NSString alloc] initWithFormat:@"http://%@songs?dance=%0.2f&energy=%0.2f&genre=%@&count=%d", ipAddress, danceability, energy, genre, count];
+    int count=20;
+    NSString *url = [[NSString alloc] initWithFormat:@"http://%@songs?dance=%0.2f&energy=%0.2f&genre=%@&count=%d&searchTerm=%@", ip, danceability, energy, genre, count, searchTerm];
+    if(danceability < 0){
+        url = [[NSString alloc] initWithFormat:@"http://%@songs?genre=%@&count=%d&searchTerm=%@", ipAddress, genre, count, searchTerm];
+    }
     NSLog(@"%@", url);
     self.dataController.searchResult = [[SearchResult alloc] initFromURLWithString:url
                                                      completion:^(JSONModel *model, JSONModelError *err) {
                                                          
                                                          //json fetched
-                                                         NSLog(@"response: %@", self.dataController.searchResult.response);
+                                                         //NSLog(@"response: %@", self.dataController.searchResult.response);
                                                          self.dataController.masterSongList = (NSMutableArray *)self.dataController.searchResult.response;
                                                          [self.collectionView reloadData];
+                                                         [self.spinner stopAnimating];
                                                      }];
 }
 

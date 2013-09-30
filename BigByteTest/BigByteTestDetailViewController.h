@@ -19,9 +19,12 @@
 @property (weak, nonatomic) BigByteTestMasterViewController *masterController;
 @property (weak, nonatomic) NSString *genreInput;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
 - (void)search: (NSString *)searchTerm
          genre: (NSString *)genre
   danceability: (double)danceability
-        energy: (double) energy;
+        energy: (double) energy
+            ip: (NSString *) ip;
 
 @end

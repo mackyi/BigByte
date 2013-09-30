@@ -70,8 +70,8 @@
                         @"Soundtrack",
                         @"World"];
     _genreTerm = [_genreCodes objectAtIndex:0];
-    _danceability = 0.5;
-    _energy = 0.5;
+    _danceability = -1;
+    _energy = -1;
     _searchTerm = @"";
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -79,6 +79,12 @@
 //    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (BigByteTestDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleTap:)];
+    [self.danceEnergyGrid addGestureRecognizer:singleFingerTap];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -168,14 +174,15 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    _ip = _ipaddress.text;
     [searchBar resignFirstResponder];
-    NSString *searchTerm = [searchBar text];
-    NSString *genre = _genreTerm;
-    NSLog(@"%@", searchTerm);
-    [self.detailViewController search:searchTerm
+    _searchTerm = [searchBar text];
+    NSLog(@"%@", _searchTerm);
+    [self.detailViewController search:_searchTerm
                                 genre:_genreTerm
                          danceability:_danceability
-                               energy:_energy];
+                               energy:_energy
+                                   ip:_ip];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -205,8 +212,33 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.detailViewController.genreInput = [self.genreCodes objectAtIndex: row];
+    _ip = _ipaddress.text;
+    _genreTerm = [self.genreCodes objectAtIndex: row];
+    [self.detailViewController search:_searchTerm
+                                genre:_genreTerm
+                         danceability:_danceability
+                               energy:_energy
+                                   ip:_ip];
 }
 
+- (void)handleTap:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"%@", @"Got Tap");
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint location = [sender locationInView:self.danceEnergyGrid];
+        int danceHeight = self.danceEnergyGrid.frame.size.height;
+        int energyWidth = self.danceEnergyGrid.frame.size.width;
+        self.energy = location.x / energyWidth;
+        self.danceability = (danceHeight - location.y)/ danceHeight;
+        NSLog(@"%0.2f %0.2f", _energy, _danceability);
+        _ip = _ipaddress.text;
+        [self.detailViewController search:_searchTerm
+                                    genre:_genreTerm
+                             danceability:_danceability
+                                   energy:_energy
+                                       ip:_ip];
+    }
+}
 
 @end
