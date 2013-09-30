@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC8BAFB217F7EFE60083D612 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFB117F7EFE60083D612 /* SearchResultCell.m */; };
 		EC8BAFB517F7F1070083D612 /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFB417F7F1070083D612 /* CustomCellBackground.m */; };
 		EC8BAFB817F7FADD0083D612 /* SongDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFB717F7FADD0083D612 /* SongDisplayViewController.m */; };
 		EC8BAFBA17F820970083D612 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8BAFB917F820970083D612 /* SystemConfiguration.framework */; };
@@ -27,6 +26,7 @@
 		EC8BAFEA17F91E580083D612 /* pause_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE617F91E580083D612 /* pause_button@2x.png */; };
 		EC8BAFEB17F91E580083D612 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE717F91E580083D612 /* play_button.png */; };
 		EC8BAFEC17F91E580083D612 /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8BAFE817F91E580083D612 /* play_button@2x.png */; };
+		EC8BAFEF17F94B130083D612 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BAFEE17F94B130083D612 /* SearchResultCell.m */; };
 		EC903FE717F7A4F0006F3ED2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FE617F7A4F0006F3ED2 /* Foundation.framework */; };
 		EC903FE917F7A4F0006F3ED2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FE817F7A4F0006F3ED2 /* CoreGraphics.framework */; };
 		EC903FEB17F7A4F0006F3ED2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC903FEA17F7A4F0006F3ED2 /* UIKit.framework */; };
@@ -59,8 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC8BAFB017F7EFE60083D612 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultCell.h; path = "../../CollectionView-Simple/CollectionView/SearchResultCell.h"; sourceTree = "<group>"; };
-		EC8BAFB117F7EFE60083D612 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultCell.m; path = "../../CollectionView-Simple/CollectionView/SearchResultCell.m"; sourceTree = "<group>"; };
 		EC8BAFB317F7F1070083D612 /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCellBackground.h; path = "../../CollectionView-Simple/CollectionView/CustomCellBackground.h"; sourceTree = "<group>"; };
 		EC8BAFB417F7F1070083D612 /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCellBackground.m; path = "../../CollectionView-Simple/CollectionView/CustomCellBackground.m"; sourceTree = "<group>"; };
 		EC8BAFB617F7FADD0083D612 /* SongDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongDisplayViewController.h; sourceTree = "<group>"; };
@@ -94,6 +92,8 @@
 		EC8BAFE617F91E580083D612 /* pause_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_button@2x.png"; sourceTree = "<group>"; };
 		EC8BAFE717F91E580083D612 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
 		EC8BAFE817F91E580083D612 /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button@2x.png"; sourceTree = "<group>"; };
+		EC8BAFED17F94B130083D612 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		EC8BAFEE17F94B130083D612 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		EC903FE317F7A4F0006F3ED2 /* BigByteTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigByteTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC903FE617F7A4F0006F3ED2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC903FE817F7A4F0006F3ED2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -259,8 +259,8 @@
 				EC8BAFBB17F820E50083D612 /* JSONModel */,
 				EC8BAFB317F7F1070083D612 /* CustomCellBackground.h */,
 				EC8BAFB417F7F1070083D612 /* CustomCellBackground.m */,
-				EC8BAFB017F7EFE60083D612 /* SearchResultCell.h */,
-				EC8BAFB117F7EFE60083D612 /* SearchResultCell.m */,
+				EC8BAFED17F94B130083D612 /* SearchResultCell.h */,
+				EC8BAFEE17F94B130083D612 /* SearchResultCell.m */,
 				EC903FF517F7A4F0006F3ED2 /* BigByteTestAppDelegate.h */,
 				EC903FF617F7A4F0006F3ED2 /* BigByteTestAppDelegate.m */,
 				EC903FF817F7A4F0006F3ED2 /* Main.storyboard */,
@@ -423,7 +423,6 @@
 				EC8BAFDB17F820E50083D612 /* JSONHTTPClient.m in Sources */,
 				ECFC0CF417F7A6F3000E7933 /* Song.m in Sources */,
 				EC8BAFDC17F820E50083D612 /* JSONModel+networking.m in Sources */,
-				EC8BAFB217F7EFE60083D612 /* SearchResultCell.m in Sources */,
 				EC8BAFB817F7FADD0083D612 /* SongDisplayViewController.m in Sources */,
 				EC8BAFD817F820E50083D612 /* JSONModelError.m in Sources */,
 				EC8BAFD917F820E50083D612 /* NSArray+JSONModel.m in Sources */,
@@ -441,6 +440,7 @@
 				EC8BAFD517F820E50083D612 /* JSONModel.m in Sources */,
 				EC8BAFB517F7F1070083D612 /* CustomCellBackground.m in Sources */,
 				EC903FF717F7A4F0006F3ED2 /* BigByteTestAppDelegate.m in Sources */,
+				EC8BAFEF17F94B130083D612 /* SearchResultCell.m in Sources */,
 				EC8BAFD617F820E50083D612 /* JSONModelArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
