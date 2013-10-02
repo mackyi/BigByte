@@ -5,6 +5,8 @@ BigByte
 
 Searches the iTunes catalog using danceability and energy criteria derived from the EchoNest API and processed in a Node.js/PostgreSQL backend.
 
+Backend at: https://github.com/chcokr/bigbyte
+
 Team:
   YJ Yang
   Bernard Park
